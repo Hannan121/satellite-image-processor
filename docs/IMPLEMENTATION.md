@@ -152,7 +152,7 @@ for y = margin to HEIGHT-margin:
 
 ### Design Challenges
 
-**Problem**: Task 2 (22ms) takes longer than Task 1 (13ms)
+**Problem**: Task 2 (22ms) takes longer than Task 1 (06ms)
 **Implication**: Task 1 will stall waiting for Task 2 to free buffers
 
 **Solution**: Producer-consumer pattern with ring buffer
@@ -191,13 +191,13 @@ if (buffer->status != EXPECTED_STATE) {
 ### Performance Analysis
 
 **Single Core**: Sequential execution
-- Frame time = Median (13ms) + Edge (22ms) = 35ms
-- Throughput = 28.6 fps
+- Frame time = Median (06ms) + Edge (22ms) = ~30ms
+- Throughput = ~33 fps
 
 **Dual Core**: Parallel execution
 - Frame time = max(Median, Edge) = 22ms
 - Throughput = 45.5 fps
-- Improvement = 37%
+- Improvement = 24%
 
 **Why not 2× faster?** Edge detection is the bottleneck. To achieve 2× speedup:
 1. Split edge detection across both cores (horizontal tiling)

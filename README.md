@@ -7,15 +7,27 @@
 
 ## Overview
 
-High-performance embedded image processing system designed for satellite-based space object tracking. Implements real-time edge detection pipeline optimized for resource-constrained embedded platforms (AMD Xilinx SoC/FPGA targets).
+Reference implementation of a high-performance image processing pipeline 
+designed with embedded constraints in mind. Demonstrates real-time edge 
+detection optimized for resource-constrained platforms.
 
-**Key Achievement**: Processes 3124×3030 pixel images at 10fps with optimized median filtering and edge detection algorithms, demonstrating 37% performance improvement through dual-core parallelization.
+**Current Platform**: Windows/x86 (i7-12700F) achieving 45fps on 9.5MP images
+**Target Platform**: AMD Xilinx Zynq SoC/FPGA (design considerations documented)
+
+**Key Achievement**: Processes 3124×3030 pixel images at 45fps (dual-core) 
+through algorithm optimization (histogram-based median, separable Gaussian) 
+and architecture design (lock-free ring buffers, static allocation, integer-only 
+arithmetic).
+
+**Design Philosophy**: Algorithms and architecture follow embedded best practices 
+suitable for space-grade applications, though current implementation is a desktop 
+reference for algorithm validation.
 
 ## Technical Highlights
 
 ### 🚀 Performance Optimizations
-- **Single-core**: ~35ms per frame (median: 13ms, edge detection: 22ms)
-- **Dual-core**: ~22ms per frame (37% improvement)
+- **Single-core**: ~29ms per frame (median: 06ms, edge detection: 22.5ms)
+- **Dual-core**: ~22ms per frame (24% improvement)
 - Histogram-based median filtering for O(256) complexity vs O(n log n)
 - Separable Gaussian kernels (2×5-tap vs 25-tap convolution)
 - Ring buffer architecture with zero-copy descriptor passing
@@ -155,7 +167,7 @@ for (each 100×100 block) {
 | 1     | 28.59 ms   | 07.00 ms      | 22.58 ms       |
 | 2     | 29.34 ms   | 06.36 ms      | 22.98 ms       |
 | 9     | 27.14 ms   | 05.07 ms      | 22.06 ms       |
-| Avg   | ~29 ms     | ~06 ms        | ~22.5 ms       |
+| Avg   | ~30 ms     | ~06 ms        | ~22.5 ms       |
 
 ### Dual-Core Execution
 | Frame | Core 0 (Median) | Core 1 (Edge Det.) |
@@ -165,7 +177,7 @@ for (each 100×100 block) {
 | 10    | 06.13 ms        | 21.52 ms            |
 | Avg   | ~06 ms          | ~22 ms              |
 
-**Throughput**: ~30 fps (single-core), ~45 fps (dual-core, bottlenecked by edge detection)
+**Throughput**: ~33 fps (single-core), ~45 fps (dual-core, bottlenecked by edge detection)
 
 ## Hardware Recommendations
 
