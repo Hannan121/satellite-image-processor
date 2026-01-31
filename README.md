@@ -152,20 +152,20 @@ for (each 100×100 block) {
 ### Single-Core Execution (i7-12700F, Windows)
 | Frame | Total Time | Median Filter | Edge Detection |
 |-------|------------|---------------|----------------|
-| 0     | 46.81 ms   | 11.86 ms      | 34.95 ms       |
-| 1     | 35.17 ms   | 12.29 ms      | 22.89 ms       |
-| 5     | 34.95 ms   | 12.43 ms      | 22.52 ms       |
-| Avg   | ~35 ms     | ~13 ms        | ~22 ms         |
+| 1     | 28.59 ms   | 07.00 ms      | 22.58 ms       |
+| 2     | 29.34 ms   | 06.36 ms      | 22.98 ms       |
+| 9     | 27.14 ms   | 05.07 ms      | 22.06 ms       |
+| Avg   | ~29 ms     | ~06 ms        | ~22.5 ms       |
 
 ### Dual-Core Execution
 | Frame | Core 0 (Median) | Core 1 (Edge Det.) |
 |-------|-----------------|---------------------|
-| 0     | 13.40 ms        | 35.60 ms            |
-| 1     | 13.08 ms        | 21.87 ms            |
-| 10    | 13.13 ms        | 21.90 ms            |
+| 1     | 06.19 ms        | 21.89 ms            |
+| 2     | 05.99 ms        | 21.67 ms            |
+| 10    | 06.13 ms        | 21.52 ms            |
 | Avg   | ~13 ms          | ~22 ms              |
 
-**Throughput**: ~45 fps (single-core), ~45 fps (dual-core, bottlenecked by edge detection)
+**Throughput**: ~30 fps (single-core), ~45 fps (dual-core, bottlenecked by edge detection)
 
 ## Hardware Recommendations
 
@@ -261,10 +261,23 @@ True Gaussian requires floating-point or fixed-point division. Binomial [1,4,6,4
 
 MIT License - See LICENSE file for details
 
-## Author
+## Authors and Acknowledgments
 
 Mohamed Hannan Sohail  
 [mdhannansohail141@gmail.com](mailto:mdhannansohail141@gmail.com)
+
+**Primary Author & Implementation:**
+Mohamed Hannan Sohail - All image processing algorithms, system architecture, performance optimization, and core C implementation.
+
+**Documentation & Tooling:**
+Documentation structure, README formatting, Makefile, synthetic test generator, and interview preparation materials created with assistance from Claude (Anthropic AI).
+
+**Research & Learning:**
+Claude (Anthropic AI) was used to research and understand AMD Xilinx SoC architectures, FPGA implementation strategies, and image filtering techniques (Gaussian smoothing, Sobel operators) during the development of this project.
+
+
+**Note:** The technical implementation, algorithmic decisions, and performance optimizations are entirely the work of the primary author.
+
 
 ## Acknowledgments
 
