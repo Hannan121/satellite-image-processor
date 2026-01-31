@@ -270,7 +270,7 @@ Mohamed Hannan Sohail
 Mohamed Hannan Sohail - All image processing algorithms, system architecture, performance optimization, and core C implementation.
 
 **Documentation & Tooling:**
-Documentation structure, README formatting, Makefile, synthetic test generator, and interview preparation materials created with assistance from Claude (Anthropic AI).
+Documentation structure, README formatting, Makefile and synthetic test generator created with assistance from Claude (Anthropic AI).
 
 **Research & Learning:**
 Claude (Anthropic AI) was used to research and understand AMD Xilinx SoC architectures, FPGA implementation strategies, and image filtering techniques (Gaussian smoothing, Sobel operators) during the development of this project.
