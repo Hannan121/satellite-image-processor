@@ -1,0 +1,53 @@
+# Compiled binaries
+*.exe
+*.out
+*.o
+*.so
+*.dll
+*.dylib
+satellite_sim
+satellite_dualcore_sim
+
+# Generated files
+*.bin
+*.pgm
+*.csv
+output_*.png
+output_visualized.png
+input_image.bin
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Test images (potentially proprietary)
+Raw_image_*.jpg
+Raw_image_*.png
+test_images/
+
+# Performance profiles
+*.prof
+gmon.out
+perf.data
+
+# Logs
+*.log
+
+#doc
+SETUP_INSTRUCTIONS.md
