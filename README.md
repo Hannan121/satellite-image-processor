@@ -163,7 +163,7 @@ for (each 100×100 block) {
 | 1     | 06.19 ms        | 21.89 ms            |
 | 2     | 05.99 ms        | 21.67 ms            |
 | 10    | 06.13 ms        | 21.52 ms            |
-| Avg   | ~13 ms          | ~22 ms              |
+| Avg   | ~06 ms          | ~22 ms              |
 
 **Throughput**: ~30 fps (single-core), ~45 fps (dual-core, bottlenecked by edge detection)
 
